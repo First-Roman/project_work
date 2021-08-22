@@ -1,0 +1,23 @@
+server:
+  port: 8001
+  max-http-header-size: 5MB
+  servlet:
+   session:
+    cookie:
+      http-only: true
+
+bot:
+  constructor:
+            mongo: mongodb://localhost:27017/bot-constructor
+            database-name: bot-constructor
+            url: http://localhost:80
+
+mongock:
+  runner-type: "InitializingBean"
+  change-logs-scan-package:
+    - com.firstroman.botconstructor.changelog
+
+spring:
+  servlet:
+    multipart:
+      max-file-size: 5128KB
